@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -7,6 +6,18 @@
 /public/bundles/
 /var/
 /vendor/
+/web/bundles/
+/app/bootstrap.php.cache
+/app/cache/*
+/app/config/parameters.yml
+/app/logs/*
+!.app/cache/.gitkeep
+!.app/logs/.gitkeep
+/app/phpunit.xml
+/build/
+/vendor/
+/bin/
+/composer.phar
 ###< symfony/framework-bundle ###
 
 ###> symfony/webpack-encore-bundle ###

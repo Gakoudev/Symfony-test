@@ -1,0 +1,57 @@
+{% extends 'acceil.html.twig' %}
+
+{% block title %}Incoices{% endblock %}
+
+{% block body %}
+<div class="row"> 
+    <div class="container col-md-7">
+    <div class="card"> 
+        <div class="card-header">
+            <h6 class="m-0 font-weight-bold text-primary">List of Incoices</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Identifier</th>
+                            <th>Invoice date</th>
+                            <th>Incoices number</th>
+                            <th>Customer id</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Identifier</th>
+                            <th>Invoice date</th>
+                            <th>Incoices number</th>
+                            <th>Customer id</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for i in invoices %}
+                            <tr>
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.invoicedate|date('d/m/y') }}</td>
+                            <td>{{ i.invoicenumber }}</td>
+                            <td>{{ i.customerid }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container col-md-5"> 
+    <div class="card"> 
+        <div class="card-header">
+            <h6 class="m-0 font-weight-bold text-primary">Add Incoices</h6>
+        </div>
+        <div class="card-body">
+            {{form(form)}}
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

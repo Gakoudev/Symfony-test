@@ -1,0 +1,66 @@
+{% extends 'acceil.html.twig' %}
+
+{% block title %}Incoices{% endblock %}
+
+{% block body %}
+<div class="row"> 
+    <div class="container col-md-7">
+    <div class="card"> 
+        <div class="card-header">
+            <h6 class="m-0 font-weight-bold text-primary">List of Invoice Line</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Identifier</th>
+                            <th>Invoice id</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                            <th>VAT amount</th>
+                            <th>Total VAT</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Identifier</th>
+                            <th>Invoice id</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                            <th>VAT amount</th>
+                            <th>Total VAT</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for i in invoicel %}
+                            <tr>
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.invoiceid}}</td>
+                            <td>{{ i.description }}</td>
+                            <td>{{ i.quantity }}</td>
+                            <td>{{ i.amount }}</td>
+                            <td>{{ i.vat }}</td>
+                            <td>{{ i.totalvat }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container col-md-5"> 
+    <div class="card"> 
+        <div class="card-header">
+            <h6 class="m-0 font-weight-bold text-primary">Add Incoice Line</h6>
+        </div>
+        <div class="card-body">
+            {{form(form)}}
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
